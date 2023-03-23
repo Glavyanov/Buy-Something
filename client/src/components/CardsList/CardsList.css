@@ -1,0 +1,38 @@
+.layout-masonry {
+    margin: 0;
+    display: flex;
+    width: 877px;
+    flex-direction: column;
+    max-height: calc(3*703px);
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-content: flex-start;
+}
+
+.card {
+    width: 263px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(205, 201, 201);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+footer {
+    border-top: 2px solid rgb(205, 201, 201);
+    height: 80px;
+    text-align: left;
+}
+
+.layout-masonry footer p {
+    padding: 16px;
+}
+
+section.layout-masonry p {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
