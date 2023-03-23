@@ -1333,32 +1333,29 @@
         }
     };
     var seedData = {
-        games: {
+        ads: {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "CoverFire",
-                "category": "Action",
-                "maxLevel": "70",
-                "imageUrl": "/images/CoverFire.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "title": "The Angular Skull Armchair",
+                "category": "Furniture",
+                "imageUrl": "/images/skull-chair.png",
+                "summary": "Skull Armchair Faceted Handcrafted with Black Velvet Seat",
                 "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "MineCraft",
-                "category": "Arcade",
-                "maxLevel": "250",
-                "imageUrl": "/images/MineCraft.png",
-                "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
+                "title": "Mercedes-Benz 300 SL AMG",
+                "category": "Vehicle",
+                "imageUrl": "/images/mercedes-amg.png",
+                "summary": "RM Auctions will sale a super-rare 1954 Mercedes-Benz 300 SL AMG. The Gullwing will be auctioned the beginning of  May in Monaco. There are totally eleven 300 SL AMG cars – 8 Gullwings and 3 Roadsters",
                 "_createdOn": 1617194210928,
             },
             "126777f5-3277-42ad-b874-76d043b069cb": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "title": "Zombie Lang",
-                "category": "Vertical Shooter",
-                "maxLevel": "100",
-                "imageUrl": "/images/ZombieLang.png",
-                "summary": "With it’s own unique story, set between the events of the first movie, Zombieland: Double Tap- Road Trip is a ridiculously fun top-down twin-stick shooter featuring local co-op multiplayer for up to four players. Play as your favorite heroes from the original — Tallahassee, Columbus, Wichita and Little Rock — as well as new unlockable characters from the upcoming sequel.  The game embraces the game-like elements seen in the film by  incorporating everything from the “Rules” to “Zombie Kill of the Week”.  Use your special abilities, an arsenal of weapons and the essential Zombieland rules for survival to stay alive against huge numbers of uniquely grotesque and dangerous undead monstrosities in Zombieland: Double Tap- Road Trip’s story-based campaign mode, wave-based horde mode, and boss battles.",
+                "title": "Patek Philippe Sky Moon Tourbillon",
+                "category": "Accessories",
+                "imageUrl": "/images/patek-philippe.png",
+                "summary": "Patek Philippe’s Ref. 6002 Sky Moon Tourbillon is a double-face wristwatch that features extraordinary mechanisms with 12 complications and705 parts. Other highlights include a stunning hand-engraved case in white gold, a dial in cloisonné and champlevé enamel.",
                 "_createdOn": 1617194295474,
             }
         },
