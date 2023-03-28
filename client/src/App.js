@@ -13,7 +13,7 @@ function App() {
     const [ads, setAds] = useState([]);
 
     useEffect(() => {
-        cardsService.getThreeLatest()
+        cardsService.getSevenLatest()
         .then(res => setAds(res));
 
     },[]);

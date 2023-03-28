@@ -1,0 +1,11 @@
+.nav-active {
+    color: #41cffd;
+}
+
+.nav-non-active {
+    color: #353535;
+}
+
+.navbar a {
+  text-decoration: none;
+}
