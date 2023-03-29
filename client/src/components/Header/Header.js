@@ -10,6 +10,7 @@ export const Header = () => {
                 <ul role="list" className="navbar">
                     <li className="navbar__item">
                         <NavLink className={({isActive}) => isActive ? 'nav-active' : 'nav-non-active'} to="/">Home</NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'nav-active' : 'nav-non-active'} to="/login">Login</NavLink>
                     </li>
                 </ul>
             </nav>

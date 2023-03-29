@@ -1,11 +1,22 @@
 .nav-active {
-    color: #41cffd;
+    color: rgba(65, 206, 253, 0.329);
 }
 
 .nav-non-active {
-    color: #353535;
+    color: rgba(10, 177, 189, 0.918);
 }
 
 .navbar a {
   text-decoration: none;
+  margin-left: 20px;
+}
+
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  margin-top: 2rem;
+  height: 220px;
+  padding-top: 40px;
 }
