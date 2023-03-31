@@ -11,6 +11,7 @@ export const Header = () => {
                     <li className="navbar__item">
                         <NavLink className={({isActive}) => isActive ? 'nav-active' : 'nav-non-active'} to="/">Home</NavLink>
                         <NavLink className={({isActive}) => isActive ? 'nav-active' : 'nav-non-active'} to="/login">Login</NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'nav-active' : 'nav-non-active'} to="/register">Register</NavLink>
                     </li>
                 </ul>
             </nav>

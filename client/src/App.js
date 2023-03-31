@@ -7,6 +7,7 @@ import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
 import { Login } from './components/Login/Login';
+import { Register } from './components/Register/Register';
 import * as cardsService from './services/cardsServise';
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
         e.preventDefault();
         console.log('onLoginSubmit');
     };
+
+    const onRegisterSubmit = (e) => {
+        e.preventDefault();
+        console.log('onRegisterSubmit');
+    }
     
     return (
         <>
@@ -32,6 +38,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home ads={ads} />} />
                     <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit} />} />
+                    <Route path='/register' element={<Register onRegisterSubmit={onRegisterSubmit}/>} />
                 </Routes>
             </main>
 
