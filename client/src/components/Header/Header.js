@@ -5,18 +5,22 @@ import "./Header.css";
 export const Header = () => {
   return (
     <section className="header">
-      <i className="fa-regular fa-gem fa-2xl" style={{ color: "#41cffd" }}></i>
-      <nav>
+      <nav className="navigation">
         <ul role="list" className="navbar">
-          <li className="navbar__item">
+          <li className="navbar__item__logo">
             <NavLink
               className={({ isActive }) =>
                 isActive ? "nav-active" : "nav-non-active"
               }
               to="/"
             >
-              Home
+              <i
+                className="fa-regular fa-gem fa-2xl"
+                style={{ color: "#41cffd" }}
+              ></i>
             </NavLink>
+          </li>
+          <li>
             <NavLink
               className={({ isActive }) =>
                 isActive ? "nav-active" : "nav-non-active"
