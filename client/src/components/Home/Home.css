@@ -1,0 +1,29 @@
+
+
+#main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    position: relative;
+  }
+  
+  article.home{
+    margin-left: 84px;
+  }
+  
+  article.home .nav-active {
+    color: rgba(65, 206, 253, 0.329);
+  }
+  
+  article.home .nav-non-active {
+    color: rgba(10, 177, 189, 0.918);
+  }
+  
+  article.home a {
+    text-decoration: none;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+  }

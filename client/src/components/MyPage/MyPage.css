@@ -1,0 +1,15 @@
+#my-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 600px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#my-page a.append{
+    background-color: brown;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+}

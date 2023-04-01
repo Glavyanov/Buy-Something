@@ -9,6 +9,7 @@
 .navbar a {
   text-decoration: none;
   margin-left: 20px;
+  font-size: 20px;
 }
 
 
@@ -16,6 +17,6 @@
   display: flex;
   align-items: baseline;
   justify-content: space-around;
-  height: 220px;
+  height: 168px;
   padding-top: 40px;
 }

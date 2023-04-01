@@ -13,16 +13,3 @@
     transform: rotate(360deg);
   }
 } */
-
-#main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
-  position: relative;
-}
-
-article.home{
-  margin-left: 84px;
-}
