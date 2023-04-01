@@ -1,0 +1,71 @@
+#append-ad {
+  position: absolute;
+  left: 50%;
+  top: -84px;
+  transform: translate(-50%);
+  background-color: #0a0a13;
+  height: 520px;
+  width: 520px;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-register input,
+.form-register button {
+  margin-top: 20px;
+  width: 400px;
+  height: 60px;
+  border-radius: 12px;
+  border: solid 2px #4e0eff;
+}
+
+.form-register button {
+  background-color: #4e0eff;
+  color: #faf3eb;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.form-register input {
+  background-color: #0a0a13;
+  padding-left: 20px;
+  color: #5b5a5d;
+  outline: unset;
+  font-size: 22px;
+}
+
+textarea[type="text"] {
+  width: 400px;
+  resize: none;
+  background-color: #0a0a13;
+  border: solid 2px #4e0eff;
+  outline: #4e0eff;
+  border-radius: 12px;
+  margin-top: 20px;
+  color: #5b5a5d;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #5b5a5d;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
