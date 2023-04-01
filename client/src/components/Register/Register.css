@@ -13,11 +13,11 @@
   #register{
       position: absolute;
       left: 50%;
-      top:-100px;
+      top:-130px;
       transform: translate(-50%);
       background-color: #0a0a13;
-      height: 600px;
-      width: 600px;
+      height: 520px;
+      width: 520px;
       border-radius: 60px;
       display: flex;
       flex-direction: column;
@@ -39,7 +39,7 @@
   
   .form-register input,
   .form-register button {
-      margin-top: 40px;
+      margin-top: 20px;
       width: 400px;
       height: 60px;
       border-radius: 12px;
@@ -51,7 +51,7 @@
       color:#faf3eb;
       font-size: 21px;
       font-weight: 500;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
   }
   
   .form-register input {
