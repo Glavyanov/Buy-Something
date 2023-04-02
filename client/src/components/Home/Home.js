@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom';
 import { CardList } from "../CardsList/CardsList";
 import './Home.css';
 
-export const Home = ({ ads }) => {
+export const Home = () => {
   return (
     <article className="home">
       <NavLink
@@ -13,7 +13,7 @@ export const Home = ({ ads }) => {
       >
         Catalog
       </NavLink>
-      <CardList ads={ads} />
+      <CardList />
     </article>
   );
 };

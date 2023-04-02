@@ -1,3 +1,5 @@
+import {getUserData} from './util.js';
+
 const host = 'http://localhost:3030';
 
 
@@ -7,7 +9,7 @@ async function request(url, options) {
 
         if (responce.ok !== true) {
             if (responce.status === 403) {
-                // sessionStorage.removeItem('userData');
+                localStorage.removeItem('userData');
             }
             const error = await responce.json();
             throw new Error(error.message);
@@ -36,10 +38,10 @@ function createOptions(method = 'get', data) {
         options.body = JSON.stringify(data);
     }
 
-    // const userData = getUserData();
-    // if (userData != null) {
-    //     options.headers['X-Authorization'] = userData.token;
-    // }
+    const userData = getUserData();
+    if (userData != null) {
+        options.headers['X-Authorization'] = userData.accessToken;
+    }
 
     return options;
 }
