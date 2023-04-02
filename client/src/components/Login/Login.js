@@ -8,14 +8,17 @@ const LoginFormKeys = {
   Password: "password",
 };
 
+const errors = {};
+
 export const Login = () => {
   const { onLoginSubmit } = useAuthContext();
-  const { values, onChangeHandler, onSubmit } = useForm(
+  const { values, onChangeHandler, onSubmit, possibleErrors } = useForm(
     {
       [LoginFormKeys.Email]: "",
       [LoginFormKeys.Password]: "",
     },
-    onLoginSubmit
+    onLoginSubmit,
+    errors
   );
 
   return (
@@ -28,6 +31,9 @@ export const Login = () => {
           value={values[LoginFormKeys.Email]}
           onChange={onChangeHandler}
         />
+        {possibleErrors.email ? (
+          <p className="form-error">{possibleErrors.email}</p>
+        ) : null}
         <input
           type="password"
           placeholder="Password"
@@ -35,6 +41,9 @@ export const Login = () => {
           value={values[LoginFormKeys.Password]}
           onChange={onChangeHandler}
         />
+        {possibleErrors.password ? (
+          <p className="form-error">{possibleErrors.password}</p>
+        ) : null}
         <button>LOG IN</button>
         <p>
           DON'T HAVE AN ACCOUNT ?

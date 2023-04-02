@@ -45,6 +45,12 @@
   font-size: 22px;
 }
 
+p.form-error.append {
+  color: red;
+  margin-bottom: -24px;
+  margin-top: -5px;
+}
+
 textarea[type="text"] {
   width: 400px;
   resize: none;
