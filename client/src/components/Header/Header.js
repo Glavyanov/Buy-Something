@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthenticationContext";
 
 import "./Header.css";
 
 export const Header = () => {
+  const context = useAuthContext();
+
+  const isAuthenticated = context.isAuthenticated;
   return (
     <section className="header">
       <nav className="navigation">
@@ -20,24 +24,38 @@ export const Header = () => {
               ></i>
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav-active" : "nav-non-active"
-              }
-              to="/login"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav-active" : "nav-non-active"
-              }
-              to="/register"
-            >
-              Register
-            </NavLink>
-          </li>
+          {isAuthenticated ? (
+            <li>
+              <p id="greet">Hello {context.userEmail}</p>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-active" : "nav-non-active"
+                }
+                to="/mypage"
+              >
+                My Page
+              </NavLink>
+            </li>
+          ) : (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-active" : "nav-non-active"
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-active" : "nav-non-active"
+                }
+                to="/register"
+              >
+                Register
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
     </section>

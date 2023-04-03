@@ -1,9 +1,9 @@
 .nav-active {
-    color: rgba(65, 206, 253, 0.329);
+  color: rgba(65, 206, 253, 0.329);
 }
 
 .nav-non-active {
-    color: rgba(10, 177, 189, 0.918);
+  color: rgba(10, 177, 189, 0.918);
 }
 
 .navbar a {
@@ -12,11 +12,16 @@
   font-size: 20px;
 }
 
-
 .navigation .navbar {
   display: flex;
   align-items: baseline;
   justify-content: space-around;
   height: 168px;
   padding-top: 40px;
+}
+
+#greet {
+  display: inline-block;
+  color: rgba(10, 177, 189, 0.918);
+  font-size: 20px;
 }
