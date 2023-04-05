@@ -1,10 +1,14 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { createCard, getSevenLatest } from "../services/cardsServise";
+import { useLocalStorage } from '../hooks/useLocalStorage';
+
 
 export const AdContext = createContext();
 
 export const AdProvider = ({ children }) => {
+  const [clearLocalStorage] = useLocalStorage();
+
   const navigate = useNavigate();
   const [ads, setAds] = useState([]);
   useEffect(() => {
@@ -15,9 +19,11 @@ export const AdProvider = ({ children }) => {
       .catch((err) => {
         getSevenLatest().then((result) => {
           setAds(result);
+          clearLocalStorage();
         });
+
       });
-  }, []);
+  }, [clearLocalStorage]);
 
   const onCreateAdSubmit = async (data) => {
     const newAd = await createCard(data);

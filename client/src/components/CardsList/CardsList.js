@@ -5,9 +5,8 @@ import { useAdContext } from "../../contexts/AdContext";
 
 
 export const CardList = () => {
-  const context = useAdContext();
-
-  const ads = context.ads;
+  
+  const {ads} = useAdContext();
 
   return (
     <section className="layout-masonry">

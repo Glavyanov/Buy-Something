@@ -1,39 +1,63 @@
 .layout-masonry {
-    margin: 0;
-    display: flex;
-    width: 877px;
-    flex-direction: column;
-    max-height: calc(3*703px);
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    align-content: flex-start;
-    margin-top: 30px;
+  margin: 0;
+  display: flex;
+  width: 877px;
+  flex-direction: column;
+  max-height: calc(3 * 703px);
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  align-content: flex-start;
+  margin-top: 30px;
 }
 
 .card {
-    width: 263px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(205, 201, 201);
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+  width: 263px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(205, 201, 201);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
 }
 
 footer {
-    border-top: 2px solid rgb(205, 201, 201);
-    height: 80px;
-    text-align: left;
+  border-top: 2px solid rgb(205, 201, 201);
+  height: 80px;
+  text-align: left;
 }
 
 .layout-masonry footer p {
-    padding: 16px;
+  padding: 16px;
 }
 
 section.layout-masonry p {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+#btn-details {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 6%,
+    rgba(1, 5, 3, 1) 7%,
+    rgba(2, 6, 4, 0.38699229691876746) 52%,
+    rgba(0, 0, 0, 1) 98%,
+    rgba(0, 0, 5, 1) 99%,
+    rgba(0, 0, 5, 1) 99%
+  );
+  cursor: pointer;
+  border: 0px;
+  border-radius: 12px 12px 0px 0px;
+  outline: none;
+  font-size: 14px;
+  color: rgb(8, 237, 245);
+}
+
+.card footer p {
+  display: inline;
 }

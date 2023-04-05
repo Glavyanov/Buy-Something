@@ -4,13 +4,12 @@ import { useAuthContext } from "../../contexts/AuthenticationContext";
 import "./Header.css";
 
 export const Header = () => {
-  const context = useAuthContext();
+  const {isAuthenticated, lastName} = useAuthContext();
 
-  const isAuthenticated = context.isAuthenticated;
   return (
     <section className="header">
       <nav className="navigation">
-        <ul role="list" className="navbar">
+        <ul role="list" className="navbar" style={{listStyle: "none"}}>
           <li className="navbar__item__logo">
             <NavLink
               className={({ isActive }) =>
@@ -26,7 +25,7 @@ export const Header = () => {
           </li>
           {isAuthenticated ? (
             <li>
-              <p id="greet">Hello {context.userEmail}</p>
+              <p id="greet">Hello {lastName}</p>
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "nav-active" : "nav-non-active"
@@ -34,6 +33,14 @@ export const Header = () => {
                 to="/mypage"
               >
                 My Page
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-active" : "nav-non-active"
+                }
+                to="/logout"
+              >
+                Logout
               </NavLink>
             </li>
           ) : (

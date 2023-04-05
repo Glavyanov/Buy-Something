@@ -1,7 +1,13 @@
-import * as api from './api';
+import * as api from "./api";
 
-const baseUrl = '/data/ads';
+const baseUrl = "/data/ads";
 
-export const getSevenLatest = async () => await api.get('/data/ads');
+export const getSevenLatest = async () => {
+  return await api.get("/data/ads");
+};
 
-export const createCard = async(data) => await api.post(baseUrl, data);
+export const getOne = async (cardId) => {
+  return await api.get(`/data/ads/${cardId}`);
+};
+
+export const createCard = async (data) => await api.post(baseUrl, data);
