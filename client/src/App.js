@@ -12,6 +12,8 @@ import { Login } from "./components/Login/Login";
 import { AppendAd } from "./components/MyPage/AppendAd/AppendAd";
 import { MyPage } from "./components/MyPage/MyPage";
 import { Register } from "./components/Register/Register";
+import { Logout } from "./components/Logout/Logout";
+import {CardDetails} from "./components/CardDetails/CardDetails";
 
 function App() {
 
@@ -37,6 +39,14 @@ function App() {
             <Route
               path="/appendad"
               element={<AppendAd />}
+            />
+            <Route
+              path="/logout"
+              element={<Logout />}
+            />
+            <Route
+              path="/details/:adId"
+              element={<CardDetails />}
             />
           </Routes>
         </main>

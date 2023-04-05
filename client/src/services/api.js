@@ -20,7 +20,7 @@ async function request(url, options) {
       return responce.json();
     }
   } catch (err) {
-    alert(err.message);
+    alert(err.message + " Please Reload Page");
     throw err;
   }
 }

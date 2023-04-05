@@ -9,10 +9,10 @@ export const AuthContext = createContext();
 export const AuthProvider = ({
     children,
 }) => {
-    const [auth, setAuth] = useLocalStorage('userData', {});
+    const [auth, setAuth, clearLocalStorage] = useLocalStorage('userData', {});
     const navigate = useNavigate();
 
-    const authService = authServiceFactory()
+    const authService = authServiceFactory();
 
     const onLoginSubmit = async (data) => {
         try {
@@ -37,7 +37,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/mypage');
+            navigate('/');
         } catch (error) {
             alert('Alert from onRegisterSubmit');
         }
@@ -45,18 +45,18 @@ export const AuthProvider = ({
 
     const onLogout = async () => {
         await authService.logout();
-
-        setAuth({});
+        clearLocalStorage();
     };
 
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
-        userId: auth._id,
-        token: auth.accessToken,
-        userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken,
+        userId: auth?._id,
+        token: auth?.accessToken,
+        userEmail: auth?.email,
+        lastName: auth?.lastName,
+        isAuthenticated: !!auth?.accessToken,
     };
 
     return (

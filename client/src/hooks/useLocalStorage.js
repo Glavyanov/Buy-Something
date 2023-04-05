@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {clearUserData} from "../services/util.js";
 
 export const useLocalStorage = (key, initialValue) => {
     const [state, setState] = useState(() => {
@@ -18,8 +19,14 @@ export const useLocalStorage = (key, initialValue) => {
         localStorage.setItem(key, JSON.stringify(value));
     };
 
+    const clearLocalStorage = () => {
+        setState({});
+        clearUserData();
+    }
+
     return [
         state,
         setLocalStorageState,
+        clearLocalStorage
     ];
 };
