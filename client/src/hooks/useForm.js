@@ -50,6 +50,27 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.password =
         "Password should be at least 6 characters long!";
     }
+    if (
+      e.target.name === "confirmPassword" &&
+      (values.password !== value)
+    ) {
+      possibleErrors.confirmPassword =
+        "Password and Confirm password fields do not match!";
+    }
+
+    if (
+      e.target.name === "firstName" &&
+      (value?.length < 2 || value?.length > 20 || /^\s*$/.test(value))
+    ) {
+      possibleErrors.firstName = "First name should be at least 2 characters long!";
+    }
+
+    if (
+      e.target.name === "lastName" &&
+      (value?.length < 5 || value?.length > 20 || /^\s*$/.test(value))
+    ) {
+      possibleErrors.lastName = "Last name should be at least 5 characters long!";
+    }
 
     setFormValues((state) => ({ ...state, [e.target.name]: e.target.value }));
 
@@ -85,6 +106,12 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.password = "";
     }
 
+    if (
+      values?.password === value
+    ) {
+      possibleErrors.confirmPassword = "";
+    }
+
     if (/^[A-Za-z0-9_.]+@[A-Za-z]+\.[A-Za-z]{2,3}$/.test(values?.email)) {
       possibleErrors.email = "";
     }
@@ -92,6 +119,23 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     if (/^https?:\/\/.+/.test(values?.imageUrl)) {
       possibleErrors.imageUrl = "";
     }
+
+    if (
+      values.firstName?.length >= 2 &&
+      values.firstName?.length <= 20 &&
+      values.firstName?.trim() !== ""
+    ) {
+      possibleErrors.firstName = "";
+    }
+
+    if (
+      values.lastName?.length >= 5 &&
+      values.lastName?.length <= 20 &&
+      values.lastName?.trim() !== ""
+    ) {
+      possibleErrors.lastName = "";
+    }
+
   };
 
   const onSubmit = (e) => {
@@ -101,6 +145,9 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     if (onSubmitHandler && noErrors && !emptyValues) {
       onSubmitHandler(values);
     }else{
+        console.log(values);
+        console.log(noErrors + 'No Errors');
+        console.log(emptyValues + 'EmptyValues');
         alert("All fields must be set!");
     }
   };
