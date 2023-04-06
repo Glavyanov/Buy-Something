@@ -1337,7 +1337,7 @@
         }
     };
     var seedData = {
-        ads: {
+        cards: {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "title": "The Angular Skull Armchair",

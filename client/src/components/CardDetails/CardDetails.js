@@ -1,65 +1,64 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import * as cardService from '../../services/cardsServise.js';
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import * as cardService from "../../services/cardsServise.js";
 
-import './CardDetails.css';
+import "./CardDetails.css";
 
-export const CardDetails = () =>{
-    const { adId } = useParams();
-    const [ad, setAd] = useState([]);
+export const CardDetails = () => {
+  const { cardId } = useParams();
+  const [ad, setAd] = useState([]);
 
-    useEffect(() => {
-        cardService.getOne(adId)
-        .then((res) => {
-            setAd(res);
-        })
+  useEffect(() => {
+    console.log();
+    cardService.getOne(cardId).then((res) => {
+      console.log(res);
+      setAd(res);
+    });
+  }, []);
 
-    },[]);
+  return (
+    <section id="game-details">
+      <h1>Details</h1>
+      <div className="info-section">
+        <div className="card-header">
+          <div className="img-container">
+            <img className="card-img" src={ad.imageUrl} alt="Ad" />
+          </div>
+          <h1>{ad.title}</h1>
+          <span className="category"><strong>Category: </strong>{ad.category}</span>
+        </div>
 
-    return(
-        <section id="game-details">
-            <h1>Card Details</h1>
-            <div className="info-section">
+        <p className="text">{ad.summary}</p>
 
-                <div className="card-header">
-                    <img className="card-img" src={ad.imageUrl} />
-                    <h1>Ad Title</h1>
-                    <span className="category">Category: {ad.category}</span>
-                    <p className="type">{/* game.category */}</p>
-                </div>
-
-                <p className="text">{ad.summary}</p>
-
-                <div className="details-comments">
-                    <h2>Comments:</h2>
-                    <ul>
-                        {<li>Hello from comments</li>}
-                        {<li>Hello from comments</li>}
-                        {<li>Hello from comments</li>}
-                        {<li>Hello from comments</li>}
-                        {<li>Hello from comments</li>}
-                        {/* {game.comments && game.comments.map(x => (
+        <div className="details-comments">
+          <h2>Comments:</h2>
+          <ul>
+            {<li>Hello from comments</li>}
+            {<li>Hello from comments</li>}
+            {<li>Hello from comments</li>}
+            {<li>Hello from comments</li>}
+            {<li>Hello from comments</li>}
+            {/* {game.comments && game.comments.map(x => (
                             <li key={x._id} className="comment">
                                 <p>{x.author.email}: {x.comment}</p>
                             </li>
                         ))} */}
-                    </ul>
+          </ul>
 
-                    {/* {!game.comments?.length && (
+          {/* {!game.comments?.length && (
                         <p className="no-comment">No comments.</p>
                     )} */}
-                </div>
+        </div>
 
-                {/* {isOwner && (
+        {/* {isOwner && (
                     <div className="buttons">
                         <Link to={`/catalog/${game._id}/edit`} className="button">Edit</Link>
                         <button className="button" onClick={onDeleteClick}>Delete</button>
                     </div>
                 )} */}
-            </div>
+      </div>
 
-            {/* isAuthenticated */ }
-        </section>
-
-    );
+      {/* isAuthenticated */}
+    </section>
+  );
 };

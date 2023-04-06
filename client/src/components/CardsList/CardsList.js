@@ -6,12 +6,12 @@ import { useAdContext } from "../../contexts/AdContext";
 
 export const CardList = () => {
   
-  const {ads} = useAdContext();
+  const {cards} = useAdContext();
 
   return (
     <section className="layout-masonry">
-      {ads?.length ? (
-        ads.map((c) => <Card key={c._id} {...c} />)
+      {cards?.length ? (
+        cards.map((c) => <Card key={c._id} {...c} />)
       ) : (
         <p>Sorry we have no ads yet!</p>
       )}

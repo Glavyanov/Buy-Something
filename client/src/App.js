@@ -45,7 +45,7 @@ function App() {
               element={<Logout />}
             />
             <Route
-              path="/details/:adId"
+              path="/details/:cardId"
               element={<CardDetails />}
             />
           </Routes>

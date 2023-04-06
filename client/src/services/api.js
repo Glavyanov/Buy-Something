@@ -4,6 +4,7 @@ const host = "http://localhost:3030";
 
 async function request(url, options) {
   try {
+    console.log(host+url, options);
     const responce = await fetch(host + url, options);
 
     if (responce.ok !== true) {
