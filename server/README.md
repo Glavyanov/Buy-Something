@@ -36,8 +36,7 @@ All requests are sent to `/jsonstore/:resource`. Resources can be nested and hav
 
 The service is initialized with three users, which can be used for immediate testing:
 * peter@abv.bg : 123456
-* george@abv.bg : 123456
-* admin@abv.bg : admin
+* john@abv.bg : 123456
 
 #### Register
 Create a new user by sending a `POST` request to `/users/register` with properties `email` and `password`. You can add any other property that you need, like username, avatar, etc. The service automatically creates a session and returns an authorization token, that can be used for requests.
