@@ -14,6 +14,7 @@ import { MyPage } from "./components/MyPage/MyPage";
 import { Register } from "./components/Register/Register";
 import { Logout } from "./components/Logout/Logout";
 import {CardDetails} from "./components/CardDetails/CardDetails";
+import { Catalog } from "./components/Catalog/Catalog";
 
 function App() {
 
@@ -47,6 +48,10 @@ function App() {
             <Route
               path="/details/:cardId"
               element={<CardDetails />}
+            />
+            <Route
+              path="/catalog"
+              element={<Catalog />}
             />
           </Routes>
         </main>

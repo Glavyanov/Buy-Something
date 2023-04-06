@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as cardService from "../../services/cardsServise.js";
+import {useAuthContext} from '../../contexts/AuthenticationContext';
 
 import "./CardDetails.css";
+import { NotFound } from "../NotFound/NotFound.js";
 
 export const CardDetails = () => {
   const { cardId } = useParams();
   const [ad, setAd] = useState([]);
+  const {isAuthenticated} = useAuthContext();
 
   useEffect(() => {
     console.log();
@@ -17,7 +20,10 @@ export const CardDetails = () => {
   }, []);
 
   return (
-    <section id="game-details">
+    <>
+    {isAuthenticated
+      ?
+      <section id="game-details">
       <h1>Details</h1>
       <div className="info-section">
         <div className="card-header">
@@ -60,5 +66,9 @@ export const CardDetails = () => {
 
       {/* isAuthenticated */}
     </section>
+      :
+      <NotFound />
+    }
+    </>
   );
 };

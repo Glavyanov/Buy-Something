@@ -9,11 +9,11 @@ export const AdProvider = ({ children }) => {
   const { clearLocalStorage } = useLocalStorage();
 
   const navigate = useNavigate();
-  const [cards, setCards] = useState([]);
+  const [sevenCards, setCards] = useState([]);
+  const [cardsAll, setAllCards] = useState([]);
   useEffect(() => {
     getSevenLatest()
       .then((result) => {
-        console.log(result.slice(0, 7));
         setCards(result.slice(0, 7));
       })
       .catch((err) => {
@@ -24,6 +24,13 @@ export const AdProvider = ({ children }) => {
       });
   }, [clearLocalStorage]);
 
+  useEffect(() => {
+    getSevenLatest()
+      .then((result) => {
+        setAllCards(result);
+      })
+  }, []);
+
   const onCreateAdSubmit = async (data) => {
     const newAd = await createCard(data);
 
@@ -33,7 +40,8 @@ export const AdProvider = ({ children }) => {
   };
 
   const contextValues = {
-    cards,
+    sevenCards,
+    cardsAll,
     onCreateAdSubmit,
   };
 

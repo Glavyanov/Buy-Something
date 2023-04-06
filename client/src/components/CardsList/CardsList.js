@@ -1,13 +1,11 @@
+import { Card } from "./Card/Card";
+
 import "./CardsList.css";
 
-import { Card } from "./Card/Card";
-import { useAdContext } from "../../contexts/AdContext";
-
-
-export const CardList = () => {
+export const CardList = ({
+  cards
+}) => {
   
-  const {cards} = useAdContext();
-
   return (
     <section className="layout-masonry">
       {cards?.length ? (
