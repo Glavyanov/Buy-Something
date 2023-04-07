@@ -1,22 +1,11 @@
 import { CardList } from "../CardsList/CardsList";
 import { useAdContext } from "../../contexts/AdContext";
-import { useState } from "react";
-/* import { useForm } from "../../../hooks/useForm"; */
+import { useState, useEffect } from "react";
 
 export const Catalog = () => {
-  /* const [searched, setSearched] = useState([]); */
+  
   const [values, setFormValues] = useState([]);
-
-  /* const { values, onChangeHandler, onSubmit, possibleErrors } = useForm(
-        {
-          title: "",
-          category: "",
-          imageUrl: "",
-          summary: "",
-        },
-        onCreateAdSubmit,
-        errors
-      ); */
+  const[catalogCards, setCatalogCards] = useState([]);
 
   const { cardsAll } = useAdContext();
 
@@ -24,11 +13,14 @@ export const Catalog = () => {
       setFormValues(e.target.value);
   };
 
+  useEffect(()=>{
+    setCatalogCards(cardsAll);
+  },[cardsAll]);
+  
   const onSubmitSearch = (e) => {
     e.preventDefault();
-    console.log(values);
+    setCatalogCards(cardsAll.filter(c => c.title.toLowerCase().includes(values.toLowerCase())));
   };
-
 
   return (
     <article className="home">
@@ -36,7 +28,7 @@ export const Catalog = () => {
         <input type="text" value={values} onChange={onChangeHandler} />
         <button>Search</button>
       </form>
-      <CardList cards={cardsAll} />
+      <CardList cards={catalogCards} />
     </article>
   );
 };

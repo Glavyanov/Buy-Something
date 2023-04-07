@@ -7,7 +7,7 @@ export const MyCardsList = ({ cards }) => {
         cards.map((c) => <Card key={c._id} {...c} owner={true}/>)
       ) : (
         <div className="empty-content">
-          <p>Your cards list is empty!</p>
+          <p>Your ads list is empty!</p>
         </div>
       )}
     </>

@@ -16,12 +16,10 @@ export const AdProvider = ({ children }) => {
     getSevenLatest()
       .then((result) => {
         setCards(result.slice(0, 7));
-        console.log(sevenCards);
       })
       .catch((err) => {
         getSevenLatest().then((result) => {
           setCards(result.slice(0, 7));
-          console.log(sevenCards);
           clearLocalStorage();
         });
       });
@@ -31,12 +29,12 @@ export const AdProvider = ({ children }) => {
     getSevenLatest().then((result) => {
       setAllCards(result);
     });
-  }, []);
+  },[]);
 
   const onCreateAdSubmit = async (data) => {
     const newAd = await createCard(data);
 
-    setCards((state) => [...state, newAd]);
+    setAllCards((state) => [...state, newAd]);
 
     navigate("/mypage");
   };
