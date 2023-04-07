@@ -23,7 +23,6 @@ export const MyPage = () => {
 
   return (
     <section id="my-page">
-      <h1 className="my-page-title">My Ads</h1>
       <nav>
         <NavLink
           className={({ isActive }) =>

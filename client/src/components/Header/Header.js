@@ -32,7 +32,7 @@ export const Header = () => {
                 }
                 to="/mypage"
               >
-                My Page
+                My Ads
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
