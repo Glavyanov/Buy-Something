@@ -10,16 +10,16 @@ import { MyCardsList } from "../CardsList/MyCardsList";
 
 export const MyPage = () => {
   const { isAuthenticated, userId } = useAuthContext();
-  const {getMyCards} = useAdContext();
+  const {getMyCards, cardsAll} = useAdContext();
   const [myCards, setMyCards] = useState([]);
 
 
   useEffect(() => {
-    const cardsPromise = getMyCards(userId)
+    getMyCards(userId)
     .then(cards => {
       setMyCards(cards);
     });
-  }, [userId])
+  }, [userId, cardsAll]);
 
   return (
     <section id="my-page">

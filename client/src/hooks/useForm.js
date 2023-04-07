@@ -145,9 +145,6 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     if (onSubmitHandler && noErrors && !emptyValues) {
       onSubmitHandler(values);
     }else{
-        console.log(values);
-        console.log(noErrors + 'No Errors');
-        console.log(emptyValues + 'EmptyValues');
         alert("All fields must be set!");
     }
   };

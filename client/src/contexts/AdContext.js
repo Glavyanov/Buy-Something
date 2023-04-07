@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { createCard, getSevenLatest } from "../services/cardsServise";
+import { createCard, getSevenLatest, remove } from "../services/cardsServise";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AdContext = createContext();
@@ -21,11 +21,11 @@ export const AdProvider = ({ children }) => {
       .catch((err) => {
         getSevenLatest().then((result) => {
           setCards(result.slice(0, 7));
-        console.log(sevenCards);
+          console.log(sevenCards);
           clearLocalStorage();
         });
       });
-  }, [clearLocalStorage]);
+  }, [clearLocalStorage, cardsAll]);
 
   useEffect(() => {
     getSevenLatest().then((result) => {
@@ -46,11 +46,21 @@ export const AdProvider = ({ children }) => {
     return responce.filter((c) => c._ownerId === userId);
   };
 
+  const onClickDelete = async (id) => {
+    const responce = await remove(id);
+    if (responce) {
+      const cards = cardsAll.filter((c) => c._id !== id);
+      setAllCards(cards);
+      navigate("/mypage");
+    }
+  };
+
   const contextValues = {
     sevenCards,
     cardsAll,
     onCreateAdSubmit,
     getMyCards,
+    onClickDelete,
   };
 
   return (

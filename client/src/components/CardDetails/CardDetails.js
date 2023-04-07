@@ -12,9 +12,7 @@ export const CardDetails = () => {
   const {isAuthenticated} = useAuthContext();
 
   useEffect(() => {
-    console.log();
     cardService.getOne(cardId).then((res) => {
-      console.log(res);
       setAd(res);
     });
   }, []);

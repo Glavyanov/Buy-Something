@@ -10,4 +10,8 @@ export const getOne = async (cardId) => {
   return await api.get(`/data/cards/${cardId}`);
 };
 
+export const remove = async (cardId) => {
+  return await api.del(`/data/cards/${cardId}`);
+};
+
 export const createCard = async (data) => await api.post(baseUrl, data);

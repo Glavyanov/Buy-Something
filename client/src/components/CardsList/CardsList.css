@@ -59,6 +59,12 @@ section.layout-masonry p {
   padding: 0px 6px;
 }
 
+#btn-details.btn-delete a{
+  color: rgb(139, 13, 13);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .card footer p {
   display: inline;
 }
