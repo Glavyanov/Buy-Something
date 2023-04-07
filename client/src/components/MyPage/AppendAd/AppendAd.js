@@ -2,7 +2,7 @@ import "./AppendAd.css";
 import { useForm } from "../../../hooks/useForm";
 import { useAdContext } from "../../../contexts/AdContext";
 
-const errors = {}; //
+const errors = {}; 
 
 export const AppendAd = () => {
   const { onCreateAdSubmit } = useAdContext();

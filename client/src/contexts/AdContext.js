@@ -11,24 +11,26 @@ export const AdProvider = ({ children }) => {
   const navigate = useNavigate();
   const [sevenCards, setCards] = useState([]);
   const [cardsAll, setAllCards] = useState([]);
+
   useEffect(() => {
     getSevenLatest()
       .then((result) => {
         setCards(result.slice(0, 7));
+        console.log(sevenCards);
       })
       .catch((err) => {
         getSevenLatest().then((result) => {
           setCards(result.slice(0, 7));
+        console.log(sevenCards);
           clearLocalStorage();
         });
       });
   }, [clearLocalStorage]);
 
   useEffect(() => {
-    getSevenLatest()
-      .then((result) => {
-        setAllCards(result);
-      })
+    getSevenLatest().then((result) => {
+      setAllCards(result);
+    });
   }, []);
 
   const onCreateAdSubmit = async (data) => {
@@ -36,13 +38,19 @@ export const AdProvider = ({ children }) => {
 
     setCards((state) => [...state, newAd]);
 
-    navigate("/");
+    navigate("/mypage");
+  };
+
+  const getMyCards = async (userId) => {
+    const responce = await getSevenLatest();
+    return responce.filter((c) => c._ownerId === userId);
   };
 
   const contextValues = {
     sevenCards,
     cardsAll,
     onCreateAdSubmit,
+    getMyCards,
   };
 
   return (

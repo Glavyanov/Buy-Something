@@ -1,7 +1,7 @@
 import { useAuthContext } from "../../../contexts/AuthenticationContext.js";
 import { Link } from "react-router-dom";
 
-export const Card = ({ summary, imageUrl, category, title, _id }) => {
+export const Card = ({ summary, imageUrl, category, title, _id, owner }) => {
   const { isAuthenticated } = useAuthContext();
 
   return (
