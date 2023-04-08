@@ -15,6 +15,7 @@ import { Register } from "./components/Register/Register";
 import { Logout } from "./components/Logout/Logout";
 import {CardDetails} from "./components/CardDetails/CardDetails";
 import { Catalog } from "./components/Catalog/Catalog";
+import { CardEdit } from "./components/CardEdit/CardEdit";
 
 function App() {
 
@@ -46,12 +47,16 @@ function App() {
               element={<Logout />}
             />
             <Route
-              path="/details/:cardId"
+              path="/details/:cardId/*"
               element={<CardDetails />}
             />
             <Route
               path="/catalog"
               element={<Catalog />}
+            />
+            <Route
+              path="/edit"
+              element={<CardEdit />}
             />
           </Routes>
         </main>

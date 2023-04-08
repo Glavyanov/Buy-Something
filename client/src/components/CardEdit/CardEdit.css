@@ -1,0 +1,103 @@
+#card-edit {
+    position: absolute;
+    background-color: #001c40;
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: -50px;
+}
+
+#edit-content {
+    width: 600px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(17, 17, 16);
+    border-radius: 26px;
+    gap: 26px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 174, 255), -0.5rem -0.5rem #09d6bb;
+}
+
+#edit-content h1 {
+    margin-top: 20px;
+    color:rgb(6 163 177);
+}
+
+#append-ad-edit {
+    background-color: #0a0a13;
+    height: 520px;
+    width: 520px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .form-ad-edit {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-ad-edit #edit-input,
+  .form-ad-edit button {
+    margin-top: 20px;
+    width: 400px;
+    height: 60px;
+    border-radius: 12px;
+    border: solid 2px #4e0eff;
+  }
+  
+  .form-ad-edit button {
+    background-color: #4e0eff;
+    color: #faf3eb;
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  
+  .form-ad-edit #edit-input {
+    background-color: #0a0a13;
+    padding-left: 20px;
+    color: #5b5a5d;
+    outline: unset;
+    font-size: 22px;
+  }
+  
+  p.form-error.append {
+    color: red;
+    margin-bottom: -24px;
+    margin-top: -5px;
+  }
+  
+  #edit-area {
+    width: 400px;
+    resize: none;
+    background-color: #0a0a13;
+    border: solid 2px #4e0eff;
+    outline: #4e0eff;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: #5b5a5d;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #5b5a5d;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }

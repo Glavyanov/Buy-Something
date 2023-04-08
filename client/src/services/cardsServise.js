@@ -15,3 +15,5 @@ export const remove = async (cardId) => {
 };
 
 export const createCard = async (data) => await api.post(baseUrl, data);
+
+export const editCard = async (data, id) => await api.put(`${baseUrl}/${id}`, data);

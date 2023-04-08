@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { createCard, getSevenLatest, remove } from "../services/cardsServise";
+import { createCard, editCard, getSevenLatest, remove } from "../services/cardsServise";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AdContext = createContext();
@@ -31,6 +31,14 @@ export const AdProvider = ({ children }) => {
     });
   },[]);
 
+  const onEditAdSubmit = async (id, data) => {
+    const newAd = await editCard(data, id);
+
+    setAllCards((state) => [...state, newAd]);
+
+    navigate("/mypage");
+  };
+
   const onCreateAdSubmit = async (data) => {
     const newAd = await createCard(data);
 
@@ -59,6 +67,7 @@ export const AdProvider = ({ children }) => {
     onCreateAdSubmit,
     getMyCards,
     onClickDelete,
+    onEditAdSubmit,
   };
 
   return (
