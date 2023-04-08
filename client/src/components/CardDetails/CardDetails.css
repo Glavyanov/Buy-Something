@@ -18,9 +18,8 @@
     rgba(2, 0, 36, 1) 96%
   );
   border-radius: 100%/80%;
-  position: absolute;
-  top: 0;
-  left: 25vw;
+  margin: 0% 50%;
+  transform: translate(-50%);
   color: rgb(19, 17, 15);
 }
 
