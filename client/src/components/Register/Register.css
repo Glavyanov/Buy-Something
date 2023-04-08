@@ -1,82 +1,80 @@
 .nav-active {
-    color: rgba(65, 206, 253, 0.329);
-  }
-  
-  .nav-non-active {
-    color: rgba(10, 177, 189, 0.918);
-  }
-  
-  a.register {
-    text-decoration: none;
-  }
-  
-  #register{
-      position: absolute;
-      left: 50%;
-      top:-84px;
-      transform: translate(-50%);
-      background-color: #0a0a13;
-      height: 520px;
-      width: 520px;
-      border-radius: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-  }
-  
-  .form-ad {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .form-ad input,
-  .form-ad button {
-      margin-top: 20px;
-      width: 400px;
-      height: 60px;
-      border-radius: 12px;
-      border: solid  2px #4e0eff;
-  }
-  
-  .form-ad button {
-      background-color: #4e0eff;
-      color:#faf3eb;
-      font-size: 21px;
-      font-weight: 500;
-      margin-bottom: 30px;
-  }
-  
-  .form-ad input {
-      background-color: #0a0a13;
-      padding-left: 20px;
-      color: #5b5a5d;
-      outline: unset;
-      font-size: 22px;
-  }
+  color: rgba(65, 206, 253, 0.329);
+}
 
-  input[placeholder="First name"]{
-    width: 180px;
-    margin-right: 20px;
+.nav-non-active {
+  color: rgba(10, 177, 189, 0.918);
+}
 
-  }
-  input[placeholder="Last name"]{
-    width: 180px;
-    margin-left: 20px;
-  }
+a.register {
+  text-decoration: none;
+}
 
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #5b5a5d;;
-    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-    transition: background-color 5000s ease-in-out 0s;
-  }
+#register {
+  margin: 0% 50%;
+  transform: translate(-50%);
+  background-color: #0a0a13;
+  height: 520px;
+  width: 520px;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 100;
+}
+
+.form-ad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-ad input,
+.form-ad button {
+  margin-top: 20px;
+  width: 400px;
+  height: 60px;
+  border-radius: 12px;
+  border: solid 2px #4e0eff;
+}
+
+.form-ad button {
+  background-color: #4e0eff;
+  color: #faf3eb;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.form-ad input {
+  background-color: #0a0a13;
+  padding-left: 20px;
+  color: #5b5a5d;
+  outline: unset;
+  font-size: 22px;
+}
+
+input[placeholder="First name"] {
+  width: 180px;
+  margin-right: 20px;
+}
+input[placeholder="Last name"] {
+  width: 180px;
+  margin-left: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #5b5a5d;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
