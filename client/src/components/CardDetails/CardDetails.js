@@ -48,27 +48,9 @@ export const CardDetails = () => {
                 {<li>Hello from comments</li>}
                 {<li>Hello from comments</li>}
                 {<li>Hello from comments</li>}
-                {/* {game.comments && game.comments.map(x => (
-                            <li key={x._id} className="comment">
-                                <p>{x.author.email}: {x.comment}</p>
-                            </li>
-                        ))} */}
               </ul>
-
-              {/* {!game.comments?.length && (
-                        <p className="no-comment">No comments.</p>
-                    )} */}
             </div>
-
-            {/* {isOwner && (
-                    <div className="buttons">
-                        <Link to={`/catalog/${game._id}/edit`} className="button">Edit</Link>
-                        <button className="button" onClick={onDeleteClick}>Delete</button>
-                    </div>
-                )} */}
           </div>
-
-          {/* isAuthenticated */}
         </section>
       ) : (
         <NotFound />
