@@ -1,0 +1,42 @@
+@import 'https://use.fontawesome.com/releases/v6.2.1/css/all.css';
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: dimgray;
+    height: 300px;
+    align-content: center;
+    position: relative;
+}
+
+#fixed {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: hwb(182 84% 2% / 0.062);
+    width:60px;
+    height: 60px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+#fixed:hover {
+    background-color: hwb(182 84% 2% / 0.212);
+}
+
+.footer ~ a {
+    color: dimgray;
+    position: relative;;
+}
+
+#fixed-flex {
+    position: relative;
+}
+.fa-solid.fa-angles-up.fa-2xl{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 3000%);
+}
