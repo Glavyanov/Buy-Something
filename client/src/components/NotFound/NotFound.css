@@ -37,6 +37,7 @@
   left: 543px;
   width: 363px;
   height: 140px;
+  z-index: 1000;
 }
 .banner {
   line-height: 20px;

@@ -10,7 +10,7 @@ import { CardEdit } from "../CardEdit/CardEdit.js";
 export const CardDetails = () => {
   const { cardId } = useParams();
   const [ad, setAd] = useState([]);
-  const { isAuthenticated } = useAuthContext();
+  const { isAuthenticated, userId } = useAuthContext();
 
   useEffect(() => {
     cardService.getOne(cardId).then((res) => {
@@ -33,9 +33,11 @@ export const CardDetails = () => {
                 <strong>Category: </strong>
                 {ad.category}
               </span>
-              <Link to="edit">
-                <button className="edit-details-btn">Edit</button>
-              </Link>
+              {ad?._ownerId === userId ? (
+                <Link to="edit">
+                  <button className="edit-details-btn">EDIT</button>
+                </Link>
+              ) : null}
             </div>
 
             <p className="text">{ad.summary}</p>
@@ -72,7 +74,7 @@ export const CardDetails = () => {
         <NotFound />
       )}
       <Routes>
-        <Route path="/edit" element={<CardEdit card={ad}/>} />
+        <Route path="/edit" element={<CardEdit card={ad} />} />
       </Routes>
     </>
   );
