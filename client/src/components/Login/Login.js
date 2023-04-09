@@ -23,7 +23,7 @@ export const Login = () => {
 
   return (
     <section id="login">
-      <form className="form-login" method="POST" onSubmit={onSubmit} >
+      <form className="form-login" onSubmit={onSubmit} >
         <input
           type="email"
           placeholder="Email"
