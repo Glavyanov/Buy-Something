@@ -19,11 +19,6 @@ import { CardEdit } from "./components/CardEdit/CardEdit";
 
 function App() {
 
-  const onRegisterSubmit = (e) => {
-    e.preventDefault();
-    console.log("onRegisterSubmit");
-  };
-  
   return (
     <AuthProvider>
       <AdProvider>
@@ -35,7 +30,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route
               path="/register"
-              element={<Register onRegisterSubmit={onRegisterSubmit} />}
+              element={<Register />}
             />
             <Route path="/mypage" element={<MyPage />} />
             <Route
