@@ -1,25 +1,27 @@
-import './NotFound.css';
+import "./NotFound.css";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
   const navigate = useNavigate();
 
   const onClickOk = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <>
-      <div class="error _s">
-        <div class="banner">
+      <div className="error _s">
+        <div className="banner">
           404 - Page Not Found
-          <div class="close _s" onClick={onClickOk}></div>
+          <div className="close _s" onClick={onClickOk}></div>
         </div>
-        <div class="content">
-          <div class="redX"></div>
-          <div class="text">A wild 404-PAGE appeared!</div>
-          <div class="btn _s">
-            <div class="dash" onClick={onClickOk}>OK</div>
+        <div className="content">
+          <div className="redX"></div>
+          <div className="text">A wild 404-PAGE appeared!</div>
+          <div className="btn _s">
+            <div className="dash" onClick={onClickOk}>
+              OK
+            </div>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ export const Footer = () => {
       <a href="#">
         <div id="fixed">
           <div id="fixed-flex">
-            <i class="fa-solid fa-angles-up fa-2xl"></i>
+            <i className="fa-solid fa-angles-up fa-2xl"></i>
           </div>
         </div>
       </a>
