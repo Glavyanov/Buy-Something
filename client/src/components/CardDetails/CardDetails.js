@@ -1,4 +1,4 @@
-import { useParams, Link, Routes, Route } from "react-router-dom";
+import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as cardService from "../../services/cardsServise.js";
 import { useAuthContext } from "../../contexts/AuthenticationContext";
@@ -11,10 +11,13 @@ export const CardDetails = () => {
   const { cardId } = useParams();
   const [ad, setAd] = useState([]);
   const { isAuthenticated, userId } = useAuthContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     cardService.getOne(cardId).then((res) => {
       setAd(res);
+    }).catch(err => {
+      navigate("/*");
     });
   }, []);
 

@@ -22,7 +22,7 @@ export const AuthProvider = ({
 
             navigate(-1);
         } catch (error) {
-            alert('Alert from onLoginSubmit');
+            navigate("/*");
         }
     };
 
