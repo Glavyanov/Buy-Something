@@ -12,7 +12,7 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     const value = e.target.value;
     if (
       e.target.name === "title" &&
-      (value?.length < 3 || value?.length > 20 || /^\s*$/.test(value))
+      (value?.length < 3 || value?.length > 50 || /^\s*$/.test(value))
     ) {
       possibleErrors.title = "Title should be at least 3 characters long!";
     }
@@ -32,7 +32,11 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.email = "Email is not valid!";
     }
 
-    if (e.target.name === "imageUrl" && !/^https?:\/\/.+/.test(value)) {
+    if (
+      (e.target.name === "imageUrl" && value.length < 10) ||
+      value?.length > 250 ||
+      value.trim() === ""
+    ) {
       possibleErrors.imageUrl = "ImageUrl is not valid!";
     }
 
@@ -50,10 +54,7 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.password =
         "Password should be at least 6 characters long!";
     }
-    if (
-      e.target.name === "confirmPassword" &&
-      (values.password !== value)
-    ) {
+    if (e.target.name === "confirmPassword" && values.password !== value) {
       possibleErrors.confirmPassword =
         "Password and Confirm password fields do not match!";
     }
@@ -62,21 +63,23 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       e.target.name === "firstName" &&
       (value?.length < 2 || value?.length > 20 || /^\s*$/.test(value))
     ) {
-      possibleErrors.firstName = "First name should be at least 2 characters long!";
+      possibleErrors.firstName =
+        "First name should be at least 2 characters long!";
     }
 
     if (
       e.target.name === "lastName" &&
       (value?.length < 5 || value?.length > 20 || /^\s*$/.test(value))
     ) {
-      possibleErrors.lastName = "Last name should be at least 5 characters long!";
+      possibleErrors.lastName =
+        "Last name should be at least 5 characters long!";
     }
 
     setFormValues((state) => ({ ...state, [e.target.name]: e.target.value }));
 
     if (
       values.title?.length >= 3 &&
-      values.title?.length <= 20 &&
+      values.title?.length <= 50 &&
       values.title?.trim() !== ""
     ) {
       possibleErrors.title = "";
@@ -106,9 +109,7 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.password = "";
     }
 
-    if (
-      values?.password === value
-    ) {
+    if (values?.password === value) {
       possibleErrors.confirmPassword = "";
     }
 
@@ -116,7 +117,11 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
       possibleErrors.email = "";
     }
 
-    if (/^https?:\/\/.+/.test(values?.imageUrl)) {
+    if (
+      values.imageUrl?.length >= 10 &&
+      values.imageUrl?.length <= 250 &&
+      values.imageUrl?.trim() !== ""
+    ) {
       possibleErrors.imageUrl = "";
     }
 
@@ -135,7 +140,6 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     ) {
       possibleErrors.lastName = "";
     }
-
   };
 
   const onSubmit = (e) => {
@@ -144,8 +148,8 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
     const noErrors = Object.values(possibleErrors).every((x) => x === "");
     if (onSubmitHandler && noErrors && !emptyValues) {
       onSubmitHandler(values);
-    }else{
-        alert("All fields must be set!");
+    } else {
+      alert("All fields must be set!");
     }
   };
 

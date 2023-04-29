@@ -50,7 +50,7 @@ export const CardEdit = ({ card }) => {
             ) : null}
             <input
               id="edit-input"
-              type="url"
+              type="text"
               name="imageUrl"
               placeholder="Image URL"
               value={values.imageUrl}

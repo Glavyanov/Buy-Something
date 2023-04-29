@@ -43,7 +43,7 @@ export const AppendAd = () => {
           <p className="form-error append">{possibleErrors.category}</p>
         ) : null}
         <input
-          type="url"
+          type="text"
           name="imageUrl"
           placeholder="Image URL"
           value={values.imageUrl}
