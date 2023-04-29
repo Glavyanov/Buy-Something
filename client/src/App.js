@@ -16,6 +16,7 @@ import { Logout } from "./components/Logout/Logout";
 import {CardDetails} from "./components/CardDetails/CardDetails";
 import { Catalog } from "./components/Catalog/Catalog";
 import { CardEdit } from "./components/CardEdit/CardEdit";
+import { NotFound } from "./components/NotFound/NotFound";
 
 function App() {
 
@@ -52,6 +53,10 @@ function App() {
             <Route
               path="/edit"
               element={<CardEdit />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
           </Routes>
         </main>
