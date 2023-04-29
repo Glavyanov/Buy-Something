@@ -144,7 +144,7 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const emptyValues = Object.values(values).some((x) => x === "");
+    const emptyValues = Object.values(values).some((x) => x === "" || x === undefined);
     const noErrors = Object.values(possibleErrors).every((x) => x === "");
     if (onSubmitHandler && noErrors && !emptyValues) {
       onSubmitHandler(values);
