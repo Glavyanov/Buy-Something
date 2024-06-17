@@ -29,6 +29,9 @@ export const Register = () => {
   return (
     <section id="register">
       <form onSubmit={onSubmit} className="form-register">
+        {possibleErrors.firstName ? (
+         <p className="form-error">{possibleErrors.firstName}</p>
+       ) : null}
         <input
           type="text"
           name={LoginFormKeys.FirstName}
@@ -37,9 +40,6 @@ export const Register = () => {
           onChange={onChangeHandler}
           onKeyUp={onChangeHandler}
         />
-         {possibleErrors.firstName ? (
-          <p className="form-error">{possibleErrors.firstName}</p>
-        ) : null}
         <input
           type="text"
           name={LoginFormKeys.LastName}

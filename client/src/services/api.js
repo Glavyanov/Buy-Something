@@ -1,6 +1,6 @@
 import { getUserData } from "./util.js";
 
-const host = "http://localhost:3030";
+const host = "https://api-birxv5iz2q-uc.a.run.app";
 
 async function request(url, options) {
   try {

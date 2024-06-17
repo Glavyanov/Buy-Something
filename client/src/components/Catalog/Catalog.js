@@ -20,7 +20,7 @@ export const Catalog = () => {
   
   const onSubmitSearch = (e) => {
     e.preventDefault();
-    setCatalogCards(cardsAll.filter(c => c[optionValues].toLowerCase().includes(values.toLowerCase())));
+    setCatalogCards(cardsAll.filter(c => c[optionValues]?.toLowerCase().includes(values.toLowerCase())));
   };
 
   const onChangeSelectMenu = (e) =>{

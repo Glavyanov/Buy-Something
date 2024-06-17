@@ -42,9 +42,9 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
 
     if (
       e.target.name === "summary" &&
-      (value?.length < 6 || value?.length > 200 || /^\s*$/.test(value))
+      (value?.length < 6 || value?.length > 800 || /^\s*$/.test(value))
     ) {
-      possibleErrors.summary = "Summary should be at least 6 characters long!";
+      possibleErrors.summary = value.length < 6 ? "Summary should be at least 6 characters long!" : value?.length > 800 ? "Summary should not be more than 800 characters" : "Please fill in";
     }
 
     if (
@@ -95,7 +95,7 @@ export const useForm = (initialValues, onSubmitHandler, initialErrors) => {
 
     if (
       values.summary?.length >= 6 &&
-      values.summary?.length <= 200 &&
+      values.summary?.length <= 800 &&
       values.summary?.trim() !== ""
     ) {
       possibleErrors.summary = "";
